@@ -9,3 +9,4 @@ $ docker build . -t hello-backend
 
 $ docker run -p 8080:8080 hello-backend
 ```
+Navigate to http://localhost:8080/ping to view "pong"
