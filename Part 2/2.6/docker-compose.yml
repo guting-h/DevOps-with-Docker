@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  frontend:
+    image: hello-frontend
+    ports:
+      - 5001:5001
+  backend: 
+    image: hello-backend
+    ports:
+      - 8080:8080
+    environment: 
+      - REDIS_HOST=redis_host
+      - POSTGRES_HOST=database
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+  redis:
+    image: redis
+    restart: unless-stopped
+    container_name: redis_host
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: postgres
+    container_name: database
