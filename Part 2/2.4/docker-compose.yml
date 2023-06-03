@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend:
+    image: hello-frontend
+    ports:
+      - 5001:5001
+  backend: 
+    image: hello-backend
+    ports:
+      - 8080:8080
+    environment: 
+      - REDIS_HOST=redis_host
+  redis:
+    image: redis
+    restart: unless-stopped
+    container_name: redis_host
