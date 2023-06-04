@@ -1,0 +1,1 @@
+Changes are made to the Dockerfiles of the back- and frontends. REQUEST_ORIGIN and REACT_APP_BACKEND_URL are changed to http://localhost and http://localhost/api respectively.
